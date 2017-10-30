@@ -25,27 +25,57 @@
       <li>delete result.employees[1].firstname</li>
 
     </ol>
-    <script src="main.js">
+    <script>
 
-    var result = {
-        "employees": [
-            {
-                "id" : 1,
-                "firstname" : "Nico",
-                "lastname" : "Boer"
-            },
-            {
-                "id" : 2,
-                "firstname" : "Tim",
-                "lastname" : "Jansen"
-            },
-            {
-                "id" : 3,
-                "firstname" : "Pim",
-                "lastname" : "Vosse"
-            }
-        ]
-    };
+
+    (function() {
+      let result = {
+          "employees": [
+              {
+                  "id" : 1,
+                  "firstname" : "Nico",
+                  "lastname" : "Boer"
+              },
+              {
+                  "id" : 2,
+                  "firstname" : "Tim",
+                  "lastname" : "Jansen"
+              },
+              {
+                  "id" : 3,
+                  "firstname" : "Pim",
+                  "lastname" : "Vosse"
+              }
+          ]
+      };
+      console.log(result);
+
+      console.log("Ik ben een: " + typeof(result.employees));
+      console.log("I read result.employees[1].firstname; and as  result.employees[1]['firstname'];" + result.employees[1]['firstname']);
+      console.log("De achternaam van Nico is: " + result.employees[0].lastname);
+      console.log("Het ID van Pim Vosse is: " + result.employees[2].id);
+
+      console.log("De voornaam van Pim is veranderd in Peter");
+      result.employees[2].firstname = 'Peter'
+      console.log(result.employees[2]);
+
+      addPermanentContract();
+      console.log("permanenten contracten zijn toegevoegd");
+      console.log(result.employees);
+      console.log("");
+
+      console.log("We verwijderen De voornaam van tim jansen");
+      delete result.employees[1].firstname;
+      console.log(result.employees);
+      console.log("");
+
+      function addPermanentContract() {
+        result.employees.forEach(function(value, index, array) {
+          value.permanentContract = true;
+        });
+      }
+
+    })();
 
     </script>
   </body>
