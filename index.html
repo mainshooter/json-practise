@@ -5,6 +5,48 @@
     <title>JSON</title>
   </head>
   <body>
-    <script src="main.js"></script>
+    <ol>
+      <li>Een array</li>
+      <li>
+        result.employees[1].firstname;
+        <br>
+        result.employees[1]['firstname'];
+      </li>
+      <li>result.employees[0].lastname</li>
+      <li>result.employees[2].id</li>
+      <li>result.employees[2].firstname = 'Peter'</li>
+      <li>
+        <p>
+          result.employees.forEach(function(value, index, array) {
+            value.permanentContract = true;
+          });
+        </p>
+      </li>
+      <li>delete result.employees[1].firstname</li>
+
+    </ol>
+    <script src="main.js">
+
+    var result = {
+        "employees": [
+            {
+                "id" : 1,
+                "firstname" : "Nico",
+                "lastname" : "Boer"
+            },
+            {
+                "id" : 2,
+                "firstname" : "Tim",
+                "lastname" : "Jansen"
+            },
+            {
+                "id" : 3,
+                "firstname" : "Pim",
+                "lastname" : "Vosse"
+            }
+        ]
+    };
+
+    </script>
   </body>
 </html>
